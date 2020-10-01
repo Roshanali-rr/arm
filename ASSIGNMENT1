@@ -6,9 +6,9 @@ MOV r2, #0x15;
 MOV r7, #0x09;
 MOV r4, #0x3;
 CMP r2,r7;
-ITTEE LE 
+ITTEE NE 
 SUBLE r2,r2,r7;
-MOVLE r0,#0x0;
+MOVNE r2,#0x0;
 ADDGT r2,r2,r4;
 MOVGT r4,#0x0;
 

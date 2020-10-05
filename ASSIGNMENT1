@@ -1,16 +1,27 @@
-AREA   appcode, CODE, READONLY
-EXPORT __main
-ENTRY
-__main FUNCTION
-MOV r2, #0x15;
-MOV r7, #0x09;
-MOV r4, #0x3;
-CMP r2,r7;
-ITTEE NE 
-SUBLE r2,r2,r7;
-MOVNE r2,#0x0;
-ADDGT r2,r2,r4;
-MOVGT r4,#0x0;
+ 	AREA     appcode, CODE, READONLY
+     EXPORT __main
+	 ENTRY 
+__main  FUNCTION		         
+    
+	MOV R2, #10
+	MOV R7, #5
+	MOV R4, #20
+	
+     CMP R2,R7
+     BNE LOOP1
+	 ADD R2, R2,R4
+	 MOV R4, #0
+	 B stop
+	 
+LOOP1 SUB R2, R2,R7
+      MOV R7, #0
+	  B stop
+	  
+stop B stop 
+   ENDFUNC
+   END
 
-ENDFUNC
-END
+	   
+	   
+	
+	
